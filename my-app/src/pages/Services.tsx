@@ -5,11 +5,11 @@ import { useEffect, useState } from 'react';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('standard');
-  const [activeTripType, setActiveTripType] = useState('outstation');
-  const [duration, setDuration] = useState(1);
-  const [distance, setDistance] = useState(300);
-  const [overnight, setOvernight] = useState(false);
   const controls = useAnimation();
+  const [activeTripType] = useState('outstation');
+  const [duration] = useState(1);
+  const [distance] = useState(300);
+  const [overnight] = useState(false);
 
   useEffect(() => {
     controls.start({
@@ -143,18 +143,6 @@ const Services = () => {
     }
   };
 
-  const calculateExtraDistance = () => {
-    const includedKm = activeTripType === 'outstation' ? 300 * duration : 19;
-    return distance > includedKm ? Math.round((distance - includedKm) * 7.5) : 0;
-  };
-
-  const calculateTotalPrice = () => {
-    const base = calculateBasePrice();
-    const extraDistance = calculateExtraDistance();
-    const nightCharge = overnight ? 500 : 0;
-    return base + extraDistance + nightCharge;
-  };
-
   return (
     <>
    
@@ -269,7 +257,7 @@ const Services = () => {
 
             {/* Pricing Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {pricingPlans[activeTab].map((plan, index) => (
+              {(pricingPlans[activeTab as keyof typeof pricingPlans] as Array<any>).map((plan: any, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -293,7 +281,7 @@ const Services = () => {
                       {plan.price}
                     </motion.p>
                     <ul className="space-y-3">
-                      {plan.details.map((detail, i) => (
+                      {plan.details.map((detail: string, i: number) => (
                         <li key={i} className="flex items-start">
                           <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-600">{detail}</span>

@@ -89,11 +89,11 @@ const BookingForm: React.FC = () => {
 
     if (serviceType === 'one-way') {
       if (!formData.distance || parseInt(formData.distance) <= 19) {
-        basePrice = pricingConfig['one-way']['city-limits'][formData.duration] || 350;
+        basePrice = pricingConfig['one-way']['city-limits'][formData.duration as keyof typeof pricingConfig['one-way']['city-limits']] || 350;
       } else {
         const distance = parseInt(formData.distance);
         if (distance <= 100) {
-          basePrice = pricingConfig['one-way']['outside-city']['100km'][formData.duration] || 850;
+          basePrice = pricingConfig['one-way']['outside-city']['100km'][formData.duration as keyof typeof pricingConfig['one-way']['outside-city']['100km']] || 850;
         } else if (distance <= 180) {
           basePrice = pricingConfig['one-way']['outside-city']['180km']['6'] || 1450;
         } else {

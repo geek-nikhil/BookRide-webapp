@@ -16,56 +16,6 @@ const Home = () => {
     });
   }, [controls]);
 
-  // Job Posting Schema Data
-  const jobPostingSchema = {
-    "@context": "https://schema.org/",
-    "@type": "JobPosting",
-    "title": "Driver – Full-Time & Part-Time (Bengaluru – Electronic City, Chandapura, Bommasandra)",
-    "description": "DriversOnCall is hiring drivers in and around Electronic City, Chandapura, and Bommasandra. Responsibilities include safe driving, timely pickup/drop, and basic vehicle care. Part-time and full-time positions available.",
-    "identifier": {
-      "@type": "PropertyValue",
-      "name": "DriversOnCall",
-      "value": "DOC-DRIVER-2025-001"
-    },
-    "datePosted": "2025-06-07",
-    "validThrough": "2026-07-15T23:59",
-    "employmentType": ["PART_TIME", "FULL_TIME"],
-    "hiringOrganization": {
-      "@type": "Organization",
-      "name": "DriversOnCall",
-      "sameAs": "https://www.driversoncall.co",
-      "logo": "https://driversoncall.co/logo.png"
-    },
-    "jobLocation": [
-      {
-        "@type": "Place",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Electronic City Phase 1",
-          "addressLocality": "Bengaluru",
-          "addressRegion": "KA",
-          "postalCode": "560100",
-          "addressCountry": "IN"
-        }
-      }
-    ],
-    "baseSalary": {
-      "@type": "MonetaryAmount",
-      "currency": "INR",
-      "value": {
-        "@type": "QuantitativeValue",
-        "value": 22000,
-        "unitText": "MONTH"
-      }
-    },
-    "applicationContact": {
-      "@type": "ContactPoint",
-      "contactType": "HR",
-      "email": "contact@driversoncall.co",
-      "telephone": "+91 8147927144"
-    }
-  };
-
   return (
 
     <>

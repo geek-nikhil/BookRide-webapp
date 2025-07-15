@@ -47,17 +47,6 @@ const Fleet = () => {
     }
   ];
 
-  const faqs = [
-    {
-      question: "How do I book a driver?",
-      answer: "Book instantly through our website or mobile app in just 3 taps."
-    },
-    {
-      question: "Are the drivers insured?",
-      answer: "Yes, all our professional drivers carry comprehensive insurance."
-    }
-  ];
-
   return (
     <div className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

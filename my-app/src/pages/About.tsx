@@ -1,5 +1,5 @@
 import { motion, useAnimation } from 'framer-motion';
-import { Users, Award, MapPin, Shield, Clock, Briefcase, HeartHandshake, Gem, ArrowRight } from 'lucide-react';
+import { Users, Shield, Clock, Briefcase, HeartHandshake, Gem, ArrowRight } from 'lucide-react';
 import { useEffect } from 'react';
 
 const About = () => {
